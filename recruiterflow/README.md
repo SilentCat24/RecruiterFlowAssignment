@@ -49,8 +49,7 @@ Visit: `http://localhost:3000` to see the app running.
 
 ---
 
-## 🏗️ How to Build and View Output
-
+## How to Build and View Output
 - **Build:** No extra build step is needed — `npm start` runs the React dev server.
 - **Mock API:** The app connects to `json-server` at `http://localhost:3001/cards`.
 - **Output:** The browser will open at `http://localhost:3000` — you will see cards displayed as MUI cards.
@@ -61,10 +60,7 @@ Visit: `http://localhost:3000` to see the app running.
 ---
 
 ## 🌿 Branching Strategy
-
 - `main` — stable production-ready code.
 - `feature/card-list` — work branch for displaying, adding, deleting card features.
 
 ---
-
-
