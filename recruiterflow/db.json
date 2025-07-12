@@ -1,0 +1,6 @@
+{
+    "cards":[
+        {"id":1,"title":"card1","body":"This is Card 1"},
+        {"id":2,"title":"card2","body":"This is Card 2"}          
+    ]
+}
