@@ -7,20 +7,26 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { useHooks } from './customHooks/Hooks';
 import DeleteIcon from '@mui/icons-material/Delete';
-
+import AddIcon from '@mui/icons-material/Add';
+import './Cards.css';
 
 const Cards = () => {
-    const {cards}=useHooks();
+    const {cards,deleteCard,addCard}=useHooks();
   return (
+    <div className='CardsSection'>
     <div style={{
-        display:"flex",
+    display:"flex",
+    justifyContent:'center',
+    alignItems:"center",
     flexWrap:'wrap' ,
     margin:"0rem 2rem"
     }}>
 {
 cards && cards.length>0 ? (
     cards.map((item,index)=>(
-                   <Card  key={index} sx={{ maxWidth: 545,margin:3}}>
+                   <Card  key={index}
+                    sx={{ maxWidth: 545,margin:3}}   
+                    >
         <CardMedia
         sx={{ height: 190,width:250 }}
              image="https://picsum.photos/200/300.jpg"
@@ -31,14 +37,14 @@ cards && cards.length>0 ? (
           {item.title}
         </Typography>
         <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-     This is a Card 1
+           {item.body}
         </Typography>
       </CardContent>
       <CardActions sx={{
         justifyContent:"space-between"
       }}>
         <Button size="small">Share</Button>
-        <Button size="small">
+        <Button size="small"  onClick={()=>deleteCard(item.id)}>
             <DeleteIcon/>
         </Button>
       </CardActions>
@@ -46,9 +52,17 @@ cards && cards.length>0 ? (
     ))
 
 ):(
-    console.log("no crads exist")
+    console.log("no cards exist")
 )
 }
+  <Button size="small"  variant="contained"onClick={addCard} style={{
+        height:"40px"
+  }}>
+         Add New Card<AddIcon/>
+        </Button>
+    </div>
+
+
     </div>
   )
 }
